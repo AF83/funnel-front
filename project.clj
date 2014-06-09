@@ -27,6 +27,7 @@
               :optimizations :advanced
               :pretty-print false}}}}
 
-  :bower-dependencies [[react "0.10.0"]]
+  :bower-dependencies [[react "0.10.0"]
+                       [foundation "5.2.3"]]
 
   :bower {:directory "dev-resources/public/vendor"})
