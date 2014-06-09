@@ -14,7 +14,8 @@
                  [org.clojure/core.async "0.1.267.0-0d7780-alpha"]
                  [om "0.5.0"]]
 
-  :plugins [[lein-cljsbuild "1.0.2"]]
+  :plugins [[lein-cljsbuild "1.0.2"]
+            [lein-bower "0.5.0"]]
 
   :hooks [leiningen.cljsbuild]
 
@@ -24,4 +25,8 @@
              :compiler
              {:output-to "dev-resources/public/js/funnel_front.js"
               :optimizations :advanced
-              :pretty-print false}}}})
+              :pretty-print false}}}}
+
+  :bower-dependencies [[react "0.10.0"]]
+
+  :bower {:directory "dev-resources/public/vendor"})
