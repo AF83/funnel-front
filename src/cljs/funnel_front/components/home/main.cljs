@@ -6,7 +6,10 @@
   (reify
     om/IRender
     (render [this]
-      (dom/div #js {:className "home"}
-        (dom/div #js {:className "query-list"})
-        (dom/div #js {:className "timeline"})
-        (dom/div #js {:className "item-detail"})))))
+      (dom/div #js {:className "home row"}
+        (dom/div #js {:className "query-list small-2 columns"}
+          (dom/p nil "Query List"))
+        (dom/div #js {:className "timeline small-5 columns"}
+          (dom/p nil "Timeline"))
+        (dom/div #js {:className "item-detail small-5 columns"}
+          (dom/p nil "Item Detail"))))))
