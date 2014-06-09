@@ -1,13 +1,14 @@
 (ns funnel-front.core
   (:require [om.core :as om :include-macros true]
-            [om.dom :as dom :include-macros true]))
+            [om.dom :as dom :include-macros true]
+            [funnel-front.components.home.main :as home]))
 
 (enable-console-print!)
 
-(def app-state (atom {:text "Hello world!"}))
+(def app-state (atom
+  {:text "Hello world!"}))
 
 (om/root
-  (fn [app owner]
-    (dom/h1 nil (:text app)))
+  home/main-comp
   app-state
-  {:target (. js/document (getElementById "app"))})
+  {:target (. js/document (getElementById "main"))})
