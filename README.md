@@ -27,11 +27,19 @@ lein bower install
 Development
 -----------
 
-For auto builds
+For clojurescript auto builds
 
 ```shell
 lein cljsbuild auto
 ```
+
+For SASS auto builds, in another shell
+
+```shell
+lein sass auto
+```
+
+SASS files go to `src/sass` folder
 
 And for dev server, in another shell
 
