@@ -15,7 +15,8 @@
                  [om "0.5.0"]]
 
   :plugins [[lein-cljsbuild "1.0.2"]
-            [lein-bower "0.5.0"]]
+            [lein-bower "0.5.0"]
+            [lein-haml-sass "0.2.7-SNAPSHOT"]]
 
   :hooks [leiningen.cljsbuild]
 
@@ -27,7 +28,15 @@
               :optimizations :advanced
               :pretty-print false}}}}
 
+  ;; Bower
+
   :bower-dependencies [[react "0.10.0"]
                        [foundation "5.2.3"]]
 
-  :bower {:directory "dev-resources/public/vendor"})
+  :bower {:directory "dev-resources/public/vendor"}
+
+  ;; Sass
+
+  :sass {:src "src/sass"
+         :output-directory "dev-resources/public/css"
+         :output-extension "css"})
