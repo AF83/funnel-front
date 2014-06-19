@@ -4,7 +4,8 @@
             [om.dom :as dom :include-macros true])
 
   (:use [funnel-front.components.home.query-list :only [query-list]]
-        [funnel-front.components.home.timeline :only [timeline]]))
+        [funnel-front.components.home.timeline :only [timeline]]
+        [funnel-front.components.home.item-detail :only [item-detail]]))
 
 
 (defn main-comp [app owner]
@@ -14,5 +15,4 @@
       (dom/div #js {:className "home row"}
         (om/build query-list nil)
         (om/build timeline nil)
-        (dom/div #js {:className "item-detail small-5 columns"}
-          (dom/p nil "Item Detail"))))))
+        (om/build item-detail nil)))))
