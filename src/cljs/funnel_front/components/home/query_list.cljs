@@ -5,10 +5,17 @@
 
   (:use [funnel-front.stores.main-store :only [app-state]]))
 
+(defn ^:private query-item [query owner]
+  (reify
+    om/IRender
+    (render [this]
+      (dom/li nil (:label query)))))
+
 (defn query-list [list owner]
   (reify
     om/IRender
     (render [this]
       (dom/div #js {:className "query-list small-2 columns"}
         (dom/h1 nil (str "Token: " (:token @app-state)))
-        (dom/p nil "Query List")))))
+        (apply dom/ul nil
+          (om/build-all query-item (:queries @app-state)))))))
