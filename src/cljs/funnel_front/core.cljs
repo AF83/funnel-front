@@ -1,12 +1,13 @@
 (ns funnel-front.core
   (:require [om.core :as om :include-macros true]
-            [om.dom :as dom :include-macros true]
-            [funnel-front.components.home.main :as home]
-            [funnel-front.stores.main-store :as store]))
+            [om.dom :as dom :include-macros true])
+
+  (:use [funnel-front.components.home.main :only [main-comp]]
+        [funnel-front.stores.main-store :only [app-state]]))
 
 (enable-console-print!)
 
 (om/root
-  home/main-comp
-  store/app-state
+  main-comp
+  app-state
   {:target (. js/document (getElementById "app"))})
