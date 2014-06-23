@@ -2,6 +2,7 @@
 
 (def app-state (atom {
   :token "abcdef"
+  :current-query "foo"
   :queries [{:label "foo"
              :es-query "flop flip flup"
              :items [{:type :github-commit :json ""}]}
