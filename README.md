@@ -53,6 +53,26 @@ and inside the REPL
 (run)
 ```
 
+### Event Source
+
+Edit `/etc/hosts` and add
+
+```
+127.0.0.1	funnel-front.local
+```
+
+Add `development/conf-nginx` to your Nginx
+
+Finally launch the Node.js server
+
+```shell
+cd development
+node sse.js
+```
+
+This is a temporary Node.js dependency for development purpose.
+It will soon be removed.
+
 Copyright
 ---------
 
