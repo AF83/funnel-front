@@ -9,34 +9,45 @@
 
   :source-paths ["src/clj" "src/cljs"]
 
-  :dependencies [[org.clojure/clojure "1.5.1"]
-                 [org.clojure/clojurescript "0.0-2173"]
-                 [org.clojure/core.async "0.1.267.0-0d7780-alpha"]
-                 [om "0.5.0"]]
+  :dependencies [[org.clojure/clojure "1.6.0"]
+                 [org.clojure/clojurescript "0.0-2202"]
+                 [org.clojure/core.async "0.1.278.0-76b25b-alpha"]
+                 [om "0.5.0"]
+                 [figwheel "0.1.3-SNAPSHOT"]]
 
-  :plugins [[lein-cljsbuild "1.0.2"]
+
+  :plugins [[lein-cljsbuild "1.0.3"]
             [lein-bower "0.5.0"]
-            [lein-haml-sass "0.2.7-SNAPSHOT"]]
+            [lein-haml-sass "0.2.7-SNAPSHOT"]
+            [lein-figwheel "0.1.3-SNAPSHOT"]]
 
-  :hooks [leiningen.cljsbuild]
+  :source-paths ["src"]
 
-  :cljsbuild
-  {:builds {:funnel-front
-            {:source-paths ["src/cljs"]
-             :compiler
-             {:output-to "dev-resources/public/js/funnel_front.js"
-              :optimizations :advanced
-              :pretty-print false}}}}
+  :cljsbuild {
+              :builds [
+                       {:id "funnel-front"
+                        :source-paths ["src/cljs"]
+                        :compiler {
+                                   :output-to "resources/public/js/funnel_front.js"
+                                   :output-dir "resources/public/js/out"
+                                   :optimizations :none
+                                   :source-map true}}]}
 
   ;; Bower
 
   :bower-dependencies [[react "0.10.0"]
                        [foundation "5.2.3"]]
 
-  :bower {:directory "dev-resources/public/vendor"}
+  :bower {:directory "resources/public/vendor"}
 
   ;; Sass
 
   :sass {:src "src/sass"
-         :output-directory "dev-resources/public/css"
-         :output-extension "css"})
+         :output-directory "resources/public/css"
+         :output-extension "css"}
+
+  ; Figwheel
+  :figwheel {
+             :css-dirs ["resources/public/css"]
+             })
+
