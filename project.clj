@@ -25,7 +25,9 @@
             {:source-paths ["src/cljs"]
              :compiler
              {:output-to "dev-resources/public/js/funnel_front.js"
-              :optimizations :advanced
+              :output-dir "dev-resources/public/js/out"
+              :optimizations :none
+              :source-map true
               :pretty-print false}}}}
 
   ;; Bower
@@ -33,7 +35,7 @@
   :bower-dependencies [[react "0.10.0"]
                        [foundation "5.2.3"]]
 
-  :bower {:directory "dev-resources/public/vendor"}
+  :bower {:directory "dev-resources/public/js/out"}
 
   ;; Sass
 

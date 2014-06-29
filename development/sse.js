@@ -17,6 +17,8 @@ http.createServer(function(req, res) {
 
 }).listen(8000);
 
+console.log("started listening on port 8000");
+
 function sendSSE(req, res) {
   res.writeHead(200, {
     'Content-Type': 'text/event-stream',
