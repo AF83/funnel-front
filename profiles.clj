@@ -20,7 +20,7 @@
                   {:id "funnel-front dev"
                    :source-paths ["dev-resources/tools/repl"]
                    :compiler {
-                              :output-to "dev-resources/publick/js/funnel-front.js"
+                              :output-to "dev-resources/public/js/funnel_front.js"
                               :output-dir "dev-resources/public/js/out"
                               :optimizations :none
                               :source-map true
