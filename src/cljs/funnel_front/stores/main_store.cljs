@@ -6,7 +6,7 @@
   :current-query "foo"
   :example-query-id "b273d5362c0f42a6b198e5e3ab7374da"
   :queries {
-            :id1 {:label "foo"
+            :e8fb941f95c4470c9f1d1175578f352c {:label "foo"
                   :es-query "flop flip flup"
                   :query_id "id1"
                   :items [{:type :github-commit :json ""}]}

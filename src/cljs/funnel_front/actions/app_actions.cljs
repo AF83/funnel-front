@@ -5,9 +5,14 @@
 
 
 (defn update-app-state [event]
-  ;; TODO
   (let [data (.parse js/JSON (.-data event))
         queries (.-query_ids data)
-        payload (.parse js/JSON (.-body data))]
-    (.log js/console "queries: " queries)
-    (.log js/console "payload " payload)))
+        body (.parse js/JSON (.-body data))]
+    (reset! app-state
+            (update-in @app-state
+                       [:queries (keyword (first queries)) :items]
+                       conj {:body body}))
+    #_(.log js/console "queries: " queries)
+    #_(.log js/console "payload " payload)
+    #_(.log js/console "atom: " @app-state)))
+
