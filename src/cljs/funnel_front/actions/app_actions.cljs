@@ -8,11 +8,11 @@
   (let [data (.parse js/JSON (.-data event))
         queries (.-query_ids data)
         body (.parse js/JSON (.-body data))]
-    (reset! app-state
-            (update-in @app-state
-                       [:queries (keyword (first queries)) :items]
-                       conj {:body body}))
-    #_(.log js/console "queries: " queries)
-    #_(.log js/console "payload " payload)
+    (swap! app-state
+           update-in
+           [:queries (keyword (first queries)) :items]
+           conj {:body body})
+    (.log js/console "queries: " queries)
+    (.log js/console "payload " body)
     #_(.log js/console "atom: " @app-state)))
 

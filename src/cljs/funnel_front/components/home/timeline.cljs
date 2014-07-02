@@ -8,12 +8,8 @@
 ;; Uitility functions
 
 (defn ^:private current-list-content! []
-  (let [current-query (:current-query @app-state)]
-    (->
-      (filter #(= (:label %) current-query)
-              (:queries @app-state))
-      (first)
-      (:items))))
+  (let [current-query ((:current-query @app-state) (:queries @app-state))]
+    (:items current-query)))
 
 ;; Sub components
 
@@ -21,7 +17,7 @@
   (reify
     om/IRender
     (render [this]
-      (dom/li nil (-> (:type item) (str)) ) )))
+      (dom/li nil (str (into [] item)) ) )))
 
 ;; Timeline component
 
@@ -29,6 +25,7 @@
   (reify
     om/IRender
     (render [this]
+      (.log js/console "current-list-content" (current-list-content!))
       (dom/div #js {:className "timeline small-5 columns"}
         (apply dom/ul nil
           (om/build-all timeline-item (current-list-content!)))))))
