@@ -1,8 +1,13 @@
 (ns funnel-front.actions.app-actions
 
-  (:use [funnel-front.lib.helpers :only [clog!]]))
+  (:use [funnel-front.lib.helpers :only [clog!]]
+        [funnel-front.stores.main-store :only [app-state]]))
 
 
 (defn update-app-state [event]
   ;; TODO
-  (clog! "Funnel event"))
+  (let [data (.parse js/JSON (.-data event))
+        queries (.-query_ids data)
+        payload (.parse js/JSON (.-body data))]
+    (.log js/console "queries: " queries)
+    (.log js/console "payload " payload)))

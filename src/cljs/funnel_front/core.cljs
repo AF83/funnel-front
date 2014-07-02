@@ -16,4 +16,5 @@
   {:target (. js/document (getElementById "app"))})
 
 ;; Initialize SSE
-(event-source "/events" actions/update-app-state)
+(event-source "/river?token=635a3366bbdd4dfaba9df415e51a60e0" actions/update-app-state)
+
