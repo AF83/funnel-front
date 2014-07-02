@@ -18,4 +18,6 @@
       (dom/div #js {:className "query-list small-2 columns"}
         (dom/h1 nil (str "Token: " (:token @app-state)))
         (apply dom/ul nil
-          (om/build-all query-item (:queries @app-state)))))))
+               (om/build-all query-item
+                             (into []
+                                   (vals (:queries @app-state)))))))))
