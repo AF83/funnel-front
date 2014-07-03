@@ -3,7 +3,7 @@
   (:require [om.core :as om :include-macros true]
             [om.dom :as dom :include-macros true]))
 
-(defn item-detail [list owner]
+(defn item-detail [app owner]
   (reify
     om/IRender
     (render [this]

@@ -21,7 +21,7 @@
 
 ;; Timeline component
 
-(defn timeline [list owner]
+(defn timeline [app owner]
   (reify
     om/IRender
     (render [this]

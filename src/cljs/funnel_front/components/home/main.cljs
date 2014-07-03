@@ -13,6 +13,6 @@
     om/IRender
     (render [this]
       (dom/div #js {:className "home row"}
-        (om/build query-list nil)
-        (om/build timeline nil)
-        (om/build item-detail nil)))))
+        (om/build query-list app)
+        (om/build timeline app)
+        (om/build item-detail app)))))

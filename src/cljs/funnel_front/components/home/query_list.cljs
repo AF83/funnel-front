@@ -11,13 +11,13 @@
     (render [this]
       (dom/li nil (:label query)))))
 
-(defn query-list [list owner]
+(defn query-list [app owner]
   (reify
     om/IRender
     (render [this]
       (dom/div #js {:className "query-list small-2 columns"}
-        (dom/h1 nil (str "Token: " (:token @app-state)))
+        (dom/h1 nil (str "Token: " (:token app)))
         (apply dom/ul nil
                (om/build-all query-item
                              (into []
-                                   (vals (:queries @app-state)))))))))
+                                   (vals (:queries app)))))))))

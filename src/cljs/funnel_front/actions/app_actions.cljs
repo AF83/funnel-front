@@ -12,7 +12,4 @@
            update-in
            [:queries (keyword (first queries)) :items]
            conj {:body body})
-    (.log js/console "queries: " queries)
-    (.log js/console "payload " body)
-    #_(.log js/console "atom: " @app-state)))
 
