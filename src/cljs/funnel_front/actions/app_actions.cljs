@@ -6,11 +6,14 @@
 
 (defn update-app-state [event]
   (let [data (.parse js/JSON (.-data event))
-        queries (.-query_ids data)
+        queries (.-queries data)
         body (.parse js/JSON (.-body data))]
     (.log js/console data)
+    (.log js/console "first match :" (.-id (first queries)))
     (swap! app-state
            update-in
-           [:queries (keyword (first queries)) :items]
-           conj {:body body})))
+           [:queries (keyword (.-id (first queries))) :items]
+           conj {:body (js->clj body)})
+    (.log js/console @app-state)
+    ))
 
