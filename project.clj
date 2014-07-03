@@ -32,8 +32,7 @@
 
   ;; Bower
 
-  :bower-dependencies [[react "0.10.0"]
-                       [foundation "5.2.3"]]
+  :bower-dependencies [[react "0.10.0"]]
 
   :bower {:directory "dev-resources/public/js/out"}
 
