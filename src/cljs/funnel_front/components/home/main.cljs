@@ -3,9 +3,8 @@
   (:require [om.core :as om :include-macros true]
             [om.dom :as dom :include-macros true])
 
-  (:use [funnel-front.components.home.query-list :only [query-list]]
-        [funnel-front.components.home.timeline :only [timeline]]
-        [funnel-front.components.home.item-detail :only [item-detail]]))
+  (:use [funnel-front.components.home.panel :only [panel]]
+        [funnel-front.components.home.columns :only [columns]]))
 
 
 (defn main-comp [app owner]
@@ -13,6 +12,5 @@
     om/IRender
     (render [this]
       (dom/div #js {:className "home row"}
-        (om/build query-list app)
-        (om/build timeline app)
-        (om/build item-detail app)))))
+        (om/build panel app)
+        (om/build columns app)))))
