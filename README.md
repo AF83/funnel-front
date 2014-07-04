@@ -9,11 +9,7 @@ architecture.
 Installation
 ------------
 
-Use the tools provided in [Louis de Funnel](https://github.com/af83/LouisDeFunnel).
-[funnel http](https://github.com/af83/funnel_http) is required to run this front.
-All assets are served statically (see nginx conf of funnel http)
-
-Node.js and bower must be installed.
+Node.js and bower must be installed
 
 ```shell
 npm install -g bower
@@ -52,6 +48,30 @@ lein repl
 ```
 
 and inside the REPL
+
+```clojure
+(run)
+```
+
+### Event Source
+
+Edit `/etc/hosts` and add
+
+```
+127.0.0.1	funnel-front.local
+```
+
+Add `development/conf-nginx` to your Nginx
+
+Finally launch the Node.js server
+
+```shell
+cd development
+node sse.js
+```
+
+This is a temporary Node.js dependency for development purpose.
+It will soon be removed.
 
 Copyright
 ---------
