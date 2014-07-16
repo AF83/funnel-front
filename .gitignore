@@ -11,3 +11,4 @@ pom.xml
 /dev-resources/public/css/*
 /dev-resources/public/vendor/*
 .nrepl-port
+.sass-cache/
