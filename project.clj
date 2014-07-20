@@ -24,8 +24,8 @@
   {:builds {:funnel-front
             {:source-paths ["src/cljs"]
              :compiler
-             {:output-to "dev-resources/public/js/funnel_front.js"
-              :output-dir "dev-resources/public/js/out"
+             {:output-to "resources/public/js/funnel_front.js"
+              :output-dir "resources/public/js/out"
               :optimizations :none
               :source-map true
               :pretty-print false}}}}
@@ -34,10 +34,10 @@
 
   :bower-dependencies [[react "0.10.0"]]
 
-  :bower {:directory "dev-resources/public/js/out"}
+  :bower {:directory "resources/public/js/out"}
 
   ;; Sass
 
   :sass {:src "src/sass"
-         :output-directory "dev-resources/public/css"
+         :output-directory "resources/public/css"
          :output-extension "css"})

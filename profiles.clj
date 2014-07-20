@@ -9,8 +9,8 @@
                               :pretty-print true}}}}}]
 
  :dev [:shared
-       {:resources-paths ["dev-resources"]
-        :source-paths ["dev-resources/tools/http" "dev-resources/tools/repl"]
+       {:resources-paths ["resources"]
+        :source-paths ["resources/tools/http" "resources/tools/repl"]
         :dependencies [[ring "1.2.1"]
                        [compojure "1.1.6"]
                        [hickory "0.5.3"]]
@@ -18,10 +18,10 @@
         :cljsbuild
         {:builds {:funnel-front
                   {:id "funnel-front dev"
-                   :source-paths ["dev-resources/tools/repl"]
+                   :source-paths ["resources/tools/repl"]
                    :compiler {
-                              :output-to "dev-resources/public/js/funnel_front.js"
-                              :output-dir "dev-resources/public/js/out"
+                              :output-to "resources/public/js/funnel_front.js"
+                              :output-dir "resources/public/js/out"
                               :optimizations :none
                               :source-map true
                               :pretty-print true}}}}
