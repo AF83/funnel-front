@@ -1,0 +1,45 @@
+@import variables
+
+// General
+
+html, body, #app
+  height: 100%
+  margin: 0
+  padding: 0
+  width: 100%
+
+body
+  background-color: grey
+  font-family: "Gill Sans", Arial
+  position: relative
+
+// Panel
+
+#panel
+  height: 100%
+  padding-top: 5px
+  position: fixed
+  text-align: center
+  width: $panel-width
+
+// Columns
+
+#columns
+  bottom: 0
+  height: 100%
+  left: $panel-width
+  position: absolute
+  right: 0
+
+.column
+  border: 1px solid black
+  float: left
+  height: 100%
+  margin: 5px 0 0 10px
+  width: 400px
+  header
+    font-size: 2em
+    text-align: center
+  li
+    height: 58px
+    overflow: hidden
